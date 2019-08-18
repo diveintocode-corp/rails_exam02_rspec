@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @task.deadline.strftime('%Y-%m-%d %H:%M') if @task.deadline? %>
+</p>
+
+<p>
+  <strong>Completion date:</strong>
+  <%= @task.completion_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<%= link_to 'Edit', edit_project_task_path(@task.project_id, @task) %> |
+<%= link_to 'Back', project_tasks_path %>
